@@ -2,8 +2,6 @@
 
 This is a keras implementation of paper [Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/abs/1611.07004) (pix2pix). I learned a lot from tdeboissiere's [code](https://github.com/tdeboissiere/DeepLearningImplementations/tree/master/pix2pix).
 
----
-
 ## Requirements
 
 - python 3.6
@@ -11,15 +9,13 @@ This is a keras implementation of paper [Image-to-Image Translation with Conditi
 - tensorFlow 1.4
 - opencv 3.4.1
 
----
-
 ## Getting Started
 
 ### 1. Preparing your data
 
 All your training data and validation data should be processed into A2B form as shown in figure. Then moving the training images (3 channels) into folder `./data/train` , and validation images into folder `./data/val` .
 
-![]()
+![](https://github.com/hao-qiang/pix2pix_keras/blob/master/figure/A2B.png)
 
 ### 2. Training
 
@@ -38,7 +34,5 @@ You need to change the path of folder `testset_dir` and `save_dir` , and run
 ```
 python test.py
 ```
-
----
 
 ## Have fun!
