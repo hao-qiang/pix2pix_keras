@@ -30,16 +30,16 @@ D_opt = Adam(lr=1E-3, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
 
 # Load generator model
 generator_model = models.load("generator", img_dim=(256, 256, 3))
-# generator_model.load_weights('./models/upsampling_p1_6W_blur_l1+perceptual/gen_weights_epoch_6.h5')
+# generator_model.load_weights('./models/pix2pix/gen_weights_epoch_6.h5')
 generator_model.compile(loss='mae', optimizer=G_opt)
 
 # Load discriminator model
 discriminator_model = models.load("discriminator", img_dim=(256, 256, 3))
-# discriminator_model.load_weights('./models/upsampling_p1_6W_blur_l1+perceptual/disc_weights_epoch_6.h5')
+# discriminator_model.load_weights('./models/pix2pix/disc_weights_epoch_6.h5')
 discriminator_model.trainable = False
 
 DCGAN_model = models.DCGAN(generator_model, discriminator_model, img_dim=(256, 256, 3))
-# DCGAN_model.load_weights('./models/upsampling_p1_6W_blur_l1+perceptual/DCGAN_weights_epoch_6.h5')
+# DCGAN_model.load_weights('./models/pix2pix/DCGAN_weights_epoch_6.h5')
 
 loss = [l1_loss, 'binary_crossentropy']
 # loss = [perceptual_loss, 'binary_crossentropy']
