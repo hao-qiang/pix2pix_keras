@@ -1,5 +1,4 @@
 import os
-import time
 import numpy as np
 import models
 from keras.utils import generic_utils
@@ -55,8 +54,7 @@ print("Start training")
 for e in range(1, nb_epoch+1):
     # Initialize progbar and batch counter
     progbar = generic_utils.Progbar(epoch_size)
-    start = time.time()
-    print('Epoch %s/%s, Time: %s' % (e, nb_epoch, time.time() - start))
+    print('Epoch %s/%s' % (e, nb_epoch))
     
     for b in range(1, n_batch_per_epoch+1):
         X_HR_batch, X_LR_batch = gen_batch(train_list, batch_size)
