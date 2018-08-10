@@ -11,7 +11,8 @@ batch_size = 32
 n_batch_per_epoch = 200
 nb_epoch = 40
 model_name = "pix2pix"
-
+if not os.path.exists("./models/" + model_name):
+    os.makedirs("./models/" + model_name)
 epoch_size = n_batch_per_epoch * batch_size
 
 # Load and rescale data
